@@ -75,7 +75,7 @@ function get_top_players($pdo, $limit = 20) {
 }
 
 function class_id_to_name($classId) {
-    // MU Online class mapping (main classes only, expand as needed)
+    // MU Online class mapping
     $classes = [
         0 => 'Dark Wizard',
         1 => 'Soul Master',
