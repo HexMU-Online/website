@@ -1,0 +1,6 @@
+RewriteEngine On
+
+# Redirect /file/variable to /file.php?var=variable
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([a-zA-Z0-9_]+)/(.*)$ $1.php?var=$2 [L,QSA]

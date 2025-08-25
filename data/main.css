@@ -1,0 +1,170 @@
+@media (min-width: 992px) {
+  .sidebar {
+    min-height: 100vh;
+    border-right: 1px solid #222;
+    background: #111 !important;
+    color: #ccc;
+  }
+  .main-content {
+    margin-left: 220px;
+    background: #181818;
+    color: #e0e0e0;
+  }
+}
+@media (max-width: 991.98px) {
+  .sidebar {
+    display: none;
+  }
+  .main-content {
+    margin-left: 0;
+    background: #181818;
+    color: #e0e0e0;
+  }
+}
+
+/* Sidebar nav links */
+.sidebar .nav-link,
+.offcanvas .nav-link {
+  color: #9a8787 !important;
+  transition: color 0.2s;
+}
+.sidebar .nav-link:hover,
+.sidebar .nav-link:focus,
+.offcanvas .nav-link:hover,
+.offcanvas .nav-link:focus {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+/* Sidebar brand/logo */
+.sidebar .navbar-brand img,
+.offcanvas .navbar-brand img {
+  filter: brightness(0.9) contrast(1.2);
+}
+
+/* Sidebar badges */
+.sidebar .badge,
+.offcanvas .badge {
+  font-size: 1em;
+  background: #222;
+  color: #fff;
+  border-radius: 0.5em;
+}
+
+/* Card and form backgrounds */
+.card {
+  background: #222;
+  color: #e0e0e0;
+  border: 1px solid #333;
+}
+.card .form-control {
+  background: #181818;
+  color: #fff;
+  border: 1px solid #444;
+}
+.card .form-control:focus {
+  background: #222;
+  color: #fff;
+  border-color: #666;
+}
+
+/* Modal background */
+.modal-content {
+  background: #181818;
+  color: #e0e0e0;
+  border: 1px solid #333;
+}
+.modal-header,
+.modal-footer {
+  border-color: #222;
+}
+.btn-primary {
+  background: #9a8787;
+  border-color: #9a8787;
+  color: #181818;
+}
+.btn-primary:hover,
+.btn-primary:focus {
+  background: #fff;
+  color: #181818;
+  border-color: #fff;
+}
+
+/* General body background */
+body {
+  background: #181818;
+  color: #e0e0e0;
+}
+
+/* Offcanvas sidebar styles to match .sidebar */
+.offcanvas {
+  background: #111 !important;
+  color: #ccc;
+  border-right: 1px solid #222;
+}
+.offcanvas .offcanvas-header {
+  border-bottom: 1px solid #222;
+  background: #181818;
+}
+.offcanvas .navbar-brand img {
+  filter: brightness(0.9) contrast(1.2);
+}
+.offcanvas .nav-link {
+  color: #9a8787 !important;
+  transition: color 0.2s;
+}
+.offcanvas .nav-link:hover,
+.offcanvas .nav-link:focus {
+  color: #fff !important;
+  background: rgba(255, 255, 255, 0.05);
+}
+.offcanvas .badge {
+  font-size: 1em;
+  background: #222;
+  color: #fff;
+  border-radius: 0.5em;
+}
+.offcanvas .btn-close {
+  filter: invert(1) grayscale(1);
+}
+
+/* Search form styles to match card/form theme */
+form.d-flex {
+  background: #222;
+  border-radius: 0.5em;
+  padding: 0.25em 0.5em;
+  border: 1px solid #333;
+}
+form.d-flex .form-control {
+  background: #181818;
+  color: #fff;
+  border: 1px solid #444;
+}
+form.d-flex .form-control:focus {
+  background: #222;
+  color: #fff;
+  border-color: #666;
+}
+form.d-flex .btn,
+form.d-flex .btn-outline-primary {
+  background: #9a8787;
+  border-color: #9a8787;
+  color: #181818;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+form.d-flex .btn:hover,
+form.d-flex .btn:focus,
+form.d-flex .btn-outline-primary:hover,
+form.d-flex .btn-outline-primary:focus {
+  background: #fff;
+  color: #181818;
+  border-color: #fff;
+}
+
+.carousel-caption {
+  background: rgba(0, 0, 0, 0.85);
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-bottom: 2.25rem;
+}
