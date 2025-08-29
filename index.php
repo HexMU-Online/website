@@ -13,80 +13,7 @@ require_once 'data/functions.php';
     <meta name="author" content="Among Demons">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link href="/data/main.css?v=1" rel="stylesheet">
-    <style>
-      /* Hero Section */
-      .hero-section {
-        background: url('/data/images/landing-bg.jpg') center center/cover no-repeat;
-        min-height: 75vh;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        position: relative;
-        color: #fff;
-        text-shadow: 0 2px 8px #000a;
-      }
-      .hero-overlay {
-        position: absolute;
-        top: 0; left: 0; width: 100%; height: 100%;
-        background: rgba(0,0,0,0.55);
-        z-index: 1;
-      }
-      .hero-content {
-        position: relative;
-        z-index: 2;
-        text-align: center;
-      }
-      .hero-logo {
-        max-width: 180px;
-        margin-bottom: 1.5rem;
-      }
-      .hero-title {
-        font-size: 2.8rem;
-        font-weight: bold;
-        letter-spacing: 2px;
-      }
-      .hero-subtitle {
-        font-size: 1.3rem;
-        margin-bottom: 2rem;
-      }
-      .hero-btn {
-        margin: 0 0.5rem;
-        min-width: 140px;
-      }
-      /* Features Section */
-      .features-section {
-        background: #181c24;
-        color: #fff;
-        padding: 3rem 0;
-      }
-      .feature-icon {
-        font-size: 2.5rem;
-        margin-bottom: 1rem;
-        color: #ffc107;
-      }
-      /* How to Start Section */
-      .start-section {
-        background: #232733;
-        color: #fff;
-        padding: 3rem 0;
-      }
-      .start-step {
-        background: #232733;
-        border: 1px solid #2c3140;
-        border-radius: 12px;
-        padding: 2rem 1.5rem;
-        margin-bottom: 1.5rem;
-        box-shadow: 0 2px 12px #0002;
-        text-align: center;
-      }
-      .start-step-number {
-        font-size: 2rem;
-        font-weight: bold;
-        color: #ffc107;
-        margin-bottom: 0.5rem;
-      }
-    </style>
+    <link href="/data/main.css?v=2" rel="stylesheet">
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
@@ -108,7 +35,7 @@ require_once 'data/functions.php';
                 Join a vibrant community, experience balanced gameplay, and relive the adventure!
               </div>
               <a href="/register.php" class="btn btn-warning btn-lg hero-btn shadow">Register</a>
-              <a href="/download.php" class="btn btn-outline-light btn-lg hero-btn shadow">Download</a>
+              <a href="/download/" class="btn btn-outline-light btn-lg hero-btn shadow">Download</a>
             </div>
           </section>
 

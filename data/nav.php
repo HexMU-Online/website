@@ -1,4 +1,10 @@
-<?php include __DIR__ . '/account.php'; ?>
+<?php 
+include __DIR__ . '/account.php'; 
+$online = '<span class="badge bg-danger" style="font-size:0.8em;">Offline</span>';
+if ($pdo) {
+    $online ='<span class="badge bg-success" style="font-size:0.8em;">'.get_online_users($pdo).' Online</span>';
+}
+?>
 <!-- Mobile Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-lg-none">
   <div class="container-fluid">
@@ -37,7 +43,7 @@
       <a class="nav-link" href="/">About Server</a>
       <a class="nav-link" href="/ranking/">Rankings</a>
       <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
-      <a class="nav-link" href="#">Downloads</a>
+      <a class="nav-link" href="/download/">Download</a>
     </nav>
     <a class="nav-link mt-auto text-white d-flex align-items-center justify-content-center" href="/discord/" target="_blank" style="color: white; background:#5865F2;border-radius:0.5em;padding:0.5em 1em;">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="1.3em" height="1.3em" style="margin-right:0.5em;">

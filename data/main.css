@@ -168,3 +168,75 @@ form.d-flex .btn-outline-primary:focus {
   bottom: 0;
   padding-bottom: 2.25rem;
 }
+
+/* Hero Section */
+.hero-section {
+  background: url('/data/images/landing-bg.png') center center/cover no-repeat;
+  min-height: 75vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #fff;
+  text-shadow: 0 2px 8px #000a;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0,0,0,0.55);
+  z-index: 1;
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+}
+.hero-logo {
+  max-width: 180px;
+  margin-bottom: 1.5rem;
+}
+.hero-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.hero-subtitle {
+  font-size: 1.3rem;
+  margin-bottom: 2rem;
+}
+.hero-btn {
+  margin: 0 0.5rem;
+  min-width: 140px;
+}
+/* Features Section */
+.features-section {
+  background: #181c24;
+  color: #fff;
+  padding: 3rem 0;
+}
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+  color: #ffc107;
+}
+/* How to Start Section */
+.start-section {
+  background: #232733;
+  color: #fff;
+  padding: 3rem 0;
+}
+.start-step {
+  background: #232733;
+  border: 1px solid #2c3140;
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 2px 12px #0002;
+  text-align: center;
+}
+.start-step-number {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #ffc107;
+  margin-bottom: 0.5rem;
+}
