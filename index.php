@@ -1,23 +1,10 @@
-<?php
-require_once 'data/functions.php';
-?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <?php include 'data/includes.php'; ?>
     <title>HexMU Online Private Server</title>
     <meta name="description" content="Testing stuff">
-    <meta name="keywords" content="tag 1, tag 2">
-    <meta name="author" content="Among Demons">
-    
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
-    <link href="/data/main.css?v=2" rel="stylesheet">
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <link rel="icon" href="/hexmu.ico" type="image/x-icon">
+    <meta name="keywords" content="tag 1, tag 2">    
   </head>
   <body>
     <?php include 'data/nav.php'; ?>
@@ -34,7 +21,7 @@ require_once 'data/functions.php';
                 The next-generation <span class="fw-bold text-warning">MU Online</span> private server.<br>
                 Join a vibrant community, experience balanced gameplay, and relive the adventure!
               </div>
-              <a href="/register.php" class="btn btn-warning btn-lg hero-btn shadow">Register</a>
+              <a href="/register/" class="btn btn-warning btn-lg hero-btn shadow">Register</a>
               <a href="/download/" class="btn btn-outline-light btn-lg hero-btn shadow">Download</a>
             </div>
           </section>
@@ -45,7 +32,7 @@ require_once 'data/functions.php';
               <div class="row text-center mb-4">
                 <div class="col">
                   <h2 class="fw-bold">Server Features</h2>
-                  <p class="text-secondary">HexMU Online - 10 EXP - Low Drop</p>
+                  <p class="text-secondary">HexMU Online - 50 EXP - Low Drop</p>
                 </div>
               </div>
               <div class="row g-4">
@@ -133,7 +120,7 @@ require_once 'data/functions.php';
                   <div class="card bg-dark text-white h-100 shadow-sm border-0">
                     <!-- Example YouTube video embed for Discord Bot -->
                     <div class="ratio ratio-16x9">
-                      <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Discord Bot" allowfullscreen></iframe>
+                      <!-- <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Discord Bot" allowfullscreen></iframe>-->
                     </div>
                     <div class="card-body text-center">
                       <span class="feature-icon"><i class="bi bi-discord"></i></span>

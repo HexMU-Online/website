@@ -22,6 +22,16 @@
   }
 }
 
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: rgb(126 172 239);
+  text-decoration: none;
+}
+
 /* Sidebar nav links */
 .sidebar .nav-link,
 .offcanvas .nav-link {
@@ -45,7 +55,6 @@
 /* Sidebar badges */
 .sidebar .badge,
 .offcanvas .badge {
-  font-size: 1em;
   background: #222;
   color: #fff;
   border-radius: 0.5em;
@@ -119,7 +128,6 @@ body {
   background: rgba(255, 255, 255, 0.05);
 }
 .offcanvas .badge {
-  font-size: 1em;
   background: #222;
   color: #fff;
   border-radius: 0.5em;
@@ -239,4 +247,13 @@ form.d-flex .btn-outline-primary:focus {
   font-weight: bold;
   color: #ffc107;
   margin-bottom: 0.5rem;
+}
+.online {
+  font-size: 0.9em;
+}
+
+#register {
+  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/data/images/register-bg.png") center center/cover no-repeat;
+  height: 100%;
+  max-width: 100%;
 }

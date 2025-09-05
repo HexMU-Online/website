@@ -1,14 +1,7 @@
-<?php 
-include __DIR__ . '/account.php'; 
-$online = '<span class="badge bg-danger" style="font-size:0.8em;">Offline</span>';
-if ($pdo) {
-    $online ='<span class="badge bg-success" style="font-size:0.8em;">'.get_online_users($pdo).' Online</span>';
-}
-?>
 <!-- Mobile Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-lg-none">
   <div class="container-fluid">
-    <a class="navbar-brand p-0" href="https://hexmu.online">
+    <a class="navbar-brand p-0" href="https://hexmu.com">
       <img src="/data/images/hexmu_logo_inline.png" alt="HexMU Logo" height="40" class="d-inline-block align-text-top">
     </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#mobileSidebar" aria-controls="mobileSidebar">
@@ -19,30 +12,22 @@ if ($pdo) {
 <!-- Offcanvas Sidebar for Mobile -->
 <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
   <div class="offcanvas-header">
-    <a class="navbar-brand" href="https://hexmu.online" id="mobileSidebarLabel">
+    <a class="navbar-brand" href="https://hexmu.com" id="mobileSidebarLabel">
       <img src="/data/images/hexmu_logo.png" alt="HexMU Logo" class="d-inline-block align-text-top mw-100">
     </a>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
-  <?php if ($pdo): ?>
-    <div class="text-center mb-3">
-      <span class="badge bg-success" style="font-size:1em;">
-        <?php echo get_online_users($pdo); ?> Online
-      </span>
-    </div>
-  <?php else: ?>
-    <div class="text-center mb-3">
-      <span class="badge bg-danger" style="font-size:1em;">
-        Offline
-      </span>
-    </div>
-  <?php endif; ?>
+  <div class="text-center mb-3">
+    <span class="badge online">
+      Loading...
+    </span>
+  </div>
   <div class="offcanvas-body d-flex flex-column" style="height:100%;">
     <nav class="nav flex-column flex-grow-1">
       <a class="nav-link" href="/">Home</a>
       <a class="nav-link" href="/">About Server</a>
       <a class="nav-link" href="/ranking/">Rankings</a>
-      <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
+      <a class="nav-link" href="/register/">Register</a>
       <a class="nav-link" href="/download/">Download</a>
     </nav>
     <a class="nav-link mt-auto text-white d-flex align-items-center justify-content-center" href="/discord/" target="_blank" style="color: white; background:#5865F2;border-radius:0.5em;padding:0.5em 1em;">
@@ -58,24 +43,16 @@ if ($pdo) {
     <a class="navbar-brand pb-2" href="https://hexmu.online">
       <img src="/data/images/hexmu_logo.png" alt="HexMU Logo" class="d-inline-block align-text-top mw-100">
     </a>
-    <?php if ($pdo): ?>
-      <div class="text-center mb-3">
-        <span class="badge bg-success" style="font-size:1em;">
-          <?php echo get_online_users($pdo); ?> Online
-        </span>
-      </div>
-    <?php else: ?>
-      <div class="text-center mb-3">
-        <span class="badge bg-danger" style="font-size:1em;">
-          Offline
-        </span>
-      </div>
-    <?php endif; ?>
+    <div class="text-center mb-3">
+    <span class="badge online">
+      Loading...
+    </span>
+  </div>
     <nav class="nav flex-column flex-grow-1">
       <a class="nav-link" href="/">Home</a>
       <a class="nav-link" href="/">About Server</a>
       <a class="nav-link" href="/ranking/">Rankings</a>
-      <a class="nav-link" href="#" data-bs-toggle="modal" data-bs-target="#registerModal">Register</a>
+      <a class="nav-link" href="/register/">Register</a>
       <a class="nav-link" href="#">Downloads</a>
     </nav>
     <a class="nav-link mt-auto text-white d-flex align-items-center justify-content-center mx-2 my-3" href="/discord/" target="_blank" style="color: white !important; background:#5865F2;border-radius:0.5em;padding:0.5em 1em;">
