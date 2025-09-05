@@ -11,7 +11,7 @@
 
     <div class="container d-flex justify-content-center align-items-center" id="register">
       <div class="card shadow-lg rounded-3" style="max-width: 450px; width: 100%;">
-        <div class="card-body p-4">
+        <div class="card-body py-4" style="padding-left: 2rem; padding-right: 2rem;">
           <h3 class="text-center mb-4">Create HexMU Account</h3>
           <div id="registerMessage" class="mb-3"></div>
 
@@ -43,7 +43,7 @@
 
             <!-- Terms -->
             <div class="form-check mb-3">
-              <input class="form-check-input" type="checkbox" id="terms" required>
+              <input class="form-check-input" type="checkbox" id="terms" name="terms" required>
               <label class="form-check-label" for="terms">
                 I agree to the <a href="#">Terms & Conditions</a>
               </label>
@@ -51,7 +51,7 @@
 
             <!-- Submit -->
             <div class="d-grid mb-3">
-              <button type="submit" id="registerBtn" class="btn btn-warning btn-lg" disabled>Register</button>
+              <button type="submit" id="registerBtn" class="btn btn-secondary btn-lg" disabled>Register</button>
             </div>
 
             <!-- Links -->
@@ -92,9 +92,11 @@
         const termsOk = terms.checked;
         const emailOk = email.validity.valid;
         const userOk = username.value.length >= 3;
-        const passOk = password.value.length >= 6;
+        const passOk = password.value.length >= 3;
 
-        registerBtn.disabled = !(matchOk && termsOk && emailOk && userOk && passOk);
+        const formValid = matchOk && termsOk && emailOk && userOk && passOk;
+        registerBtn.disabled = !formValid;
+        registerBtn.classList.toggle('btn-warning', formValid);
       }
 
       password.addEventListener("input", validateForm);

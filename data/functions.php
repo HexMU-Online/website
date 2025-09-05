@@ -46,8 +46,8 @@ function register($pdo, $username, $password, $email) {
         if ($stmt->fetchColumn() > 0) {
             return [false, 'Username already exists.'];
         }
-        $stmt = $pdo->prepare("INSERT INTO MEMB_INFO (memb___id, memb__pwd, mail_addr) VALUES (?, ?, ?)");
-        if ($stmt->execute([$username, $password, $email])) {
+        $stmt = $pdo->prepare("INSERT INTO MEMB_INFO (memb___id, memb_name, memb__pwd, mail_addr, sno__numb, bloc_code, ctl1_code) VALUES (?, ?, ?, ?, 0, 0, 0)");
+        if ($stmt->execute([$username, $username, $password, $email])) {
             return [true, ''];
         } else {
             return [false, 'Registration failed. Please try again.'];
