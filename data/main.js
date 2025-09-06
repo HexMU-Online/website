@@ -32,4 +32,29 @@ $(document).ready(function() {
             }
         });
     });
+
+    $('#loginForm').on('submit', function(e) {
+        e.preventDefault();
+        $('#loginMessage').html('');
+        $.ajax({
+            url: '/data/api/login.php',
+            type: 'POST',
+            data: $(this).serialize(),
+            dataType: 'json',
+            success: function(response) {
+                if (response.success) {
+                    $('#loginMessage').html('<div class="alert alert-success" role="alert">Login successful! Redirecting...</div>');
+                    setTimeout(() => {
+                        window.location.href = '/account/';
+                    }, 1500);
+                } else {
+                    $('#loginMessage').html('<div class="alert alert-danger" role="alert">' + response.error + '</div>');
+                }
+            },
+            error: function() {
+                $('#loginMessage').html('<div class="alert alert-danger" role="alert">Login failed. Please try again later.</div>');
+            }
+        });
+    });
+
 });

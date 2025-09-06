@@ -57,6 +57,30 @@ function register($pdo, $username, $password, $email) {
     }
 }
 
+function login($pdo, $username, $password) {
+    // Returns [success(bool), error(string)]
+    if (strlen($username) < 3 || strlen($username) > 10) {
+        return [false, 'Username must be 3-10 characters.'];
+    }
+    if (strlen($password) < 3 || strlen($password) > 10) {
+        return [false, 'Password must be 3-10 characters.'];
+    }
+    try {
+        $stmt = $pdo->prepare("SELECT memb__pwd FROM MEMB_INFO WHERE memb___id = ?");
+        $stmt->execute([$username]);
+        $row = $stmt->fetch(PDO::FETCH_ASSOC);
+
+        if ($row && $row['memb__pwd'] === $password) {
+            return [true, ''];
+        } else {
+            return [false, 'Invalid username or password.'];
+        }
+    } catch (PDOException $e) {
+        return [false, 'Login failed. Please try again.'.$e];
+    }
+}
+
+
 function get_top_players($pdo, $limit = 20) {
     // Assumes 'Character' table with 'Name', 'cLevel', 'Class', 'ResetCount'
     // and 'GuildMember' table with 'Name', 'G_Name'

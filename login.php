@@ -35,7 +35,7 @@
 
             <!-- Links -->
             <div class="text-center">
-              <a href="/register/">Don’t have an account? Register</a><br>
+              <a href="/register/">Don't have an account? Register</a><br>
               <a href="/forgot-password/">Forgot your password?</a>
             </div>
           </form>
