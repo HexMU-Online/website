@@ -87,11 +87,6 @@ a {
 .modal-footer {
   border-color: #222;
 }
-.btn-primary {
-  background: #9a8787;
-  border-color: #9a8787;
-  color: #181818;
-}
 .btn-primary:hover,
 .btn-primary:focus {
   background: #fff;
@@ -256,4 +251,9 @@ form.d-flex .btn-outline-primary:focus {
   background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/data/images/register-bg.png") center center/cover no-repeat;
   height: 100%;
   max-width: 100%;
+}
+.download-logo {
+  max-width: 80px;
+  max-height: 80px;
+  margin-bottom: 15px;
 }

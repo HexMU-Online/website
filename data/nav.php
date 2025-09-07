@@ -53,7 +53,7 @@
       <a class="nav-link" href="/about/">About Server</a>
       <a class="nav-link" href="/ranking/">Rankings</a>
       <a class="nav-link" href="/register/">Register</a>
-      <a class="nav-link" href="#">Downloads</a>
+      <a class="nav-link" href="/download/">Downloads</a>
     </nav>
     <a class="nav-link mt-auto text-white d-flex align-items-center justify-content-center mx-2 my-3" href="/discord/" target="_blank" style="color: white !important; background:#5865F2;border-radius:0.5em;padding:0.5em 1em;">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="1.3em" height="1.3em" style="margin-right:0.5em;">
