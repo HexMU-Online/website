@@ -4,7 +4,11 @@ require_once '../functions.php';
 header('Content-Type: application/json');
 
 if ($pdo) {
-    $online = get_online_users($pdo) . ' Online';
+    $count = get_online_users($pdo);
+    $online = $count . ' Online';
+    if ($count<10) {
+        $online = 'Online';
+    }
 } else {
     $online = 'Offline';
 }

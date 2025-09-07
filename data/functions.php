@@ -89,7 +89,7 @@ function get_top_players($pdo, $limit = 20) {
             "SELECT TOP $limit c.Name, c.cLevel, c.Class, c.ResetCount, gm.G_Name AS Guild
              FROM Character c
              LEFT JOIN GuildMember gm ON c.Name = gm.Name
-             ORDER BY c.cLevel DESC, c.ResetCount DESC, c.Name ASC"
+             ORDER BY c.ResetCount DESC, c.cLevel DESC, c.Name ASC"
         );
         $stmt->execute();
         return $stmt->fetchAll(PDO::FETCH_ASSOC);

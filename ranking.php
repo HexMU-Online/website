@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once 'data/functions.php';
 
 // Use $pdo, $serverOnline, $onlineUsers, $connectionError from functions.php

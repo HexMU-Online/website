@@ -29,6 +29,7 @@ list($registerSuccess, $registerError) = register($pdo, $username, $password, $e
 
 if ($registerSuccess) {
     echo json_encode(['success' => true]);
+    $_SESSION['user'] = $username;
 } else {
     echo json_encode(['success' => false, 'error' => $registerError]);
 }

@@ -13,7 +13,7 @@
 <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
   <div class="offcanvas-header">
     <a class="navbar-brand" href="https://hexmu.com" id="mobileSidebarLabel">
-      <img src="/data/images/hexmu_logo.png" alt="HexMU Logo" class="d-inline-block align-text-top mw-100">
+      <img src="/data/images/hexmu_logo.png" alt="HexMU Logo" class="d-inline-block align-text-top mw-100 px-2 pb-2">
     </a>
     <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
   </div>
@@ -25,7 +25,7 @@
   <div class="offcanvas-body d-flex flex-column" style="height:100%;">
     <nav class="nav flex-column flex-grow-1">
       <a class="nav-link" href="/">Home</a>
-      <a class="nav-link" href="/">About Server</a>
+      <a class="nav-link" href="/about/">About Server</a>
       <a class="nav-link" href="/ranking/">Rankings</a>
       <a class="nav-link" href="/register/">Register</a>
       <a class="nav-link" href="/download/">Download</a>
@@ -41,7 +41,7 @@
 <div class="col-lg-2 d-none d-lg-block bg-light sidebar position-fixed d-flex flex-column" style="width:220px;height:100vh;">
   <div class="pt-4 flex-grow-1 d-flex flex-column" style="height:100%;">
     <a class="navbar-brand pb-2" href="https://hexmu.online">
-      <img src="/data/images/hexmu_logo.png" alt="HexMU Logo" class="d-inline-block align-text-top mw-100">
+      <img src="/data/images/hexmu_logo.png" alt="HexMU Logo" class="d-inline-block align-text-top mw-100 px-2 pb-2">
     </a>
     <div class="text-center mb-3">
     <span class="badge online">
@@ -50,7 +50,7 @@
   </div>
     <nav class="nav flex-column flex-grow-1">
       <a class="nav-link" href="/">Home</a>
-      <a class="nav-link" href="/">About Server</a>
+      <a class="nav-link" href="/about/">About Server</a>
       <a class="nav-link" href="/ranking/">Rankings</a>
       <a class="nav-link" href="/register/">Register</a>
       <a class="nav-link" href="#">Downloads</a>

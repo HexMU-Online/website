@@ -21,8 +21,11 @@ $(document).ready(function() {
             dataType: 'json',
             success: function(response) {
                 if (response.success) {
-                    $('#registerMessage').html('<div class="alert alert-success" role="alert">Registration successful! You can now log in.</div>');
+                    $('#registerMessage').html('<div class="alert alert-success" role="alert">Registration successful! Redirecting...</div>');
                     $('#registerForm')[0].reset();
+                    setTimeout(() => {
+                        window.location.href = '/dashboard/';
+                    }, 100);
                 } else {
                     $('#registerMessage').html('<div class="alert alert-danger" role="alert">' + response.error + '</div>');
                 }
@@ -45,8 +48,8 @@ $(document).ready(function() {
                 if (response.success) {
                     $('#loginMessage').html('<div class="alert alert-success" role="alert">Login successful! Redirecting...</div>');
                     setTimeout(() => {
-                        window.location.href = '/account/';
-                    }, 1500);
+                        window.location.href = '/dashboard/';
+                    }, 100);
                 } else {
                     $('#loginMessage').html('<div class="alert alert-danger" role="alert">' + response.error + '</div>');
                 }
