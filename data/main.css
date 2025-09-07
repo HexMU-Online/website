@@ -35,14 +35,14 @@ a {
 /* Sidebar nav links */
 .sidebar .nav-link,
 .offcanvas .nav-link {
-  color: #9a8787 !important;
+  color: #9a8787;
   transition: color 0.2s;
 }
 .sidebar .nav-link:hover,
 .sidebar .nav-link:focus,
 .offcanvas .nav-link:hover,
 .offcanvas .nav-link:focus {
-  color: #fff !important;
+  color: #fff;
   background: rgba(255, 255, 255, 0.05);
 }
 
@@ -102,7 +102,7 @@ body {
 
 /* Offcanvas sidebar styles to match .sidebar */
 .offcanvas {
-  background: #111 !important;
+  background: #111;
   color: #ccc;
   border-right: 1px solid #222;
 }
@@ -114,12 +114,12 @@ body {
   filter: brightness(0.9) contrast(1.2);
 }
 .offcanvas .nav-link {
-  color: #9a8787 !important;
+  color: #9a8787;
   transition: color 0.2s;
 }
 .offcanvas .nav-link:hover,
 .offcanvas .nav-link:focus {
-  color: #fff !important;
+  color: #fff;
   background: rgba(255, 255, 255, 0.05);
 }
 .offcanvas .badge {
@@ -256,4 +256,13 @@ form.d-flex .btn-outline-primary:focus {
   max-width: 80px;
   max-height: 80px;
   margin-bottom: 15px;
+}
+.discord {
+  color: white !important; 
+  background:#5865F2;
+  border-radius:0.5em;
+  padding:0.5em 1em;
+}
+.discord:hover {
+  background:#4752C4 !important;
 }
