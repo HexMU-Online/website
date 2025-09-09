@@ -115,7 +115,7 @@ body {
 .offcanvas.offcanvas-start {
   width: 220px;
 }
-.offcanvas .offcanvas-header {
+.offcanvas-header {
   flex-direction: column;
   border-bottom: 1px solid #222;
   background: #181818;

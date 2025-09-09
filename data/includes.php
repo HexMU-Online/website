@@ -9,5 +9,5 @@
 
 <link rel="icon" href="/hexmu.ico" type="image/x-icon">
 
-<link href="/data/main.css?v=26" rel="stylesheet">
+<link href="/data/main.css?v=29" rel="stylesheet">
 <script src="/data/main.js?v=6"></script>

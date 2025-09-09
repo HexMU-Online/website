@@ -38,7 +38,8 @@
               <div class="row g-4">
                 <div class="col-md-6 col-lg-4">
                   <div class="card bg-dark text-white h-100 shadow-sm border-0">
-                    <img src="/data/images/features/daily-rewards.jpg" class="card-img-top" alt="Daily Rewards">
+                    <!--<img src="/data/images/features/daily-rewards.jpg" class="card-img-top" alt="Daily Rewards">-->
+                    <img src="/data/images/features/custom-quests.jpg" class="card-img-top" alt="Custom Quests">
                     <div class="card-body text-center">
                       <span class="feature-icon"><i class="bi bi-calendar2-check"></i></span>
                       <h6 class="fw-bold">Daily Rewards</h6>
