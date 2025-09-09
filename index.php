@@ -18,8 +18,8 @@
               <img src="/data/images/hexmu_logo_notext.png" alt="HexMU Logo" class="hero-logo rounded shadow">
               <h1 class="hero-title mb-3">HexMU Online</h1>
               <div class="hero-subtitle mb-4">
-                The next-generation <span class="fw-bold text-warning">MU Online</span> private server.<br>
-                Join a vibrant community, experience balanced gameplay, and relive the adventure!
+                Relive the classic <span class="fw-bold text-warning">MU Online</span> experience <br/>
+                with modern features, balanced gameplay, and a vibrant community.
               </div>
               <a href="/register/" class="btn btn-warning btn-lg hero-btn shadow">Register</a>
               <a href="/download/" class="btn btn-outline-light btn-lg hero-btn shadow">Download</a>
@@ -32,7 +32,7 @@
               <div class="row text-center mb-4">
                 <div class="col">
                   <h2 class="fw-bold">Server Features</h2>
-                  <p class="text-secondary">HexMU Online - 50 EXP - Low Drop</p>
+                  <p class="text-secondary">HexMU Online - 25 EXP - Low Drop</p>
                 </div>
               </div>
               <div class="row g-4">
