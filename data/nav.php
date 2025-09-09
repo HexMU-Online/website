@@ -1,5 +1,5 @@
 <!-- Mobile Navbar -->
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-lg-none">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark d-lg-none position-fixed w-100 top-0" style="z-index:1030;">
   <div class="container-fluid">
     <a class="navbar-brand p-0" href="https://hexmu.com">
       <img src="/data/images/hexmu_logo_inline.png" alt="HexMU Logo" height="40" class="d-inline-block align-text-top">
@@ -15,12 +15,11 @@
     <a class="navbar-brand" href="https://hexmu.com" id="mobileSidebarLabel">
       <img src="/data/images/hexmu_logo.png" alt="HexMU Logo" class="d-inline-block align-text-top mw-100 px-2 pb-2">
     </a>
-    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-  </div>
-  <div class="text-center mb-3">
-    <span class="badge online">
-      Loading...
-    </span>
+    <div class="text-center">
+      <span class="badge online">
+        Loading...
+      </span>
+    </div>
   </div>
   <div class="offcanvas-body d-flex flex-column" style="height:100%;">
     <nav class="nav flex-column flex-grow-1">

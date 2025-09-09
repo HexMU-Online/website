@@ -1,3 +1,13 @@
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+a {
+  color: rgb(126 172 239);
+  text-decoration: none;
+}
+
 @media (min-width: 992px) {
   .sidebar {
     min-height: 100vh;
@@ -20,16 +30,12 @@
     background: #181818;
     color: #e0e0e0;
   }
-}
-
-html, body {
-  height: 100%;
-  margin: 0;
-  padding: 0;
-}
-a {
-  color: rgb(126 172 239);
-  text-decoration: none;
+  body {
+    padding-top: 56px; /* Height of the navbar */
+  }
+  .navbar {
+    border-bottom: 1px solid #333;
+  }
 }
 
 /* Sidebar nav links */
@@ -106,7 +112,11 @@ body {
   color: #ccc;
   border-right: 1px solid #222;
 }
+.offcanvas.offcanvas-start {
+  width: 220px;
+}
 .offcanvas .offcanvas-header {
+  flex-direction: column;
   border-bottom: 1px solid #222;
   background: #181818;
 }
