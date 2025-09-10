@@ -11,23 +11,26 @@
 </nav>
 <!-- Offcanvas Sidebar for Mobile -->
 <div class="offcanvas offcanvas-start d-lg-none" tabindex="-1" id="mobileSidebar" aria-labelledby="mobileSidebarLabel">
-  <div class="offcanvas-header pt-4 pb-3 px-0">
+  <div class="offcanvas-header">
     <a class="navbar-brand" href="https://hexmu.com" id="mobileSidebarLabel">
       <img src="/data/images/hexmu_logo.png" alt="HexMU Logo" class="d-inline-block align-text-top mw-100 px-2">
     </a>
-    <div class="text-center">
+    <div class="text-center mt-2">
       <span class="badge online py-1 px-3">
         Loading...
       </span>
     </div>
   </div>
   <div class="offcanvas-body d-flex flex-column p-0" style="height:100%;">
-    <nav class="nav flex-column flex-grow-1">
-      <a class="nav-link" href="/">Home</a>
+    <nav class="nav flex-column flex-grow-1 mt-3">
+      <a class="btn btn-download mb-2 mx-2" href="/download/">Download</a>
+      <div class="d-flex gap-2 mx-2">
+        <a class="btn btn-login flex-grow-1" href="/login/">Login</a>
+        <a class="btn btn-register flex-grow-1" href="/register/">Register</a>
+      </div>
+      <a class="nav-link mt-3" href="/">Home</a>
       <a class="nav-link" href="/about/">About Server</a>
       <a class="nav-link" href="/ranking/">Rankings</a>
-      <a class="nav-link" href="/register/">Register</a>
-      <a class="nav-link" href="/download/">Download</a>
     </nav>
     <a class="nav-link mt-auto text-white d-flex align-items-center justify-content-center discord" href="/discord/" target="_blank">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="1.3em" height="1.3em" style="margin-right:0.5em;">
@@ -39,21 +42,23 @@
 </div>
 <div class="col-lg-2 d-none d-lg-block bg-light sidebar position-fixed d-flex flex-column" style="width:220px;height:100vh;">
   <div class="flex-grow-1 d-flex flex-column" style="height:100%;">
-    <div class="offcanvas-header pt-4 pb-3 px-0">
+    <div class="offcanvas-header">
       <a class="navbar-brand pb-2" href="https://hexmu.com">
         <img src="/data/images/hexmu_logo.png" alt="HexMU Logo" class="d-inline-block align-text-top mw-100 px-2">
       </a>
-      <div class="text-center">
+      <div class="text-center mt-2">
         <span class="badge online py-1 px-3">
           Loading...
         </span>
       </div>
     </div>
-    <nav class="nav flex-column flex-grow-1">
-      <a class="nav-link" href="/download/">Downloads</a>
-      <a class="nav-link" href="/login/">Login</a>
-      <a class="nav-link" href="/register/">Register</a>
-      <a class="nav-link" href="/">Home</a>
+    <nav class="nav flex-column flex-grow-1 mt-3">
+      <a class="btn btn-download mb-2 mx-2" href="/download/">Download</a>
+      <div class="d-flex gap-2 mx-2">
+        <a class="btn btn-login flex-grow-1" href="/login/">Login</a>
+        <a class="btn btn-register flex-grow-1" href="/register/">Register</a>
+      </div>
+      <a class="nav-link mt-3" href="/">Home</a>
       <a class="nav-link" href="/about/">About Server</a>
       <a class="nav-link" href="/ranking/">Rankings</a>
     </nav>

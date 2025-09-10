@@ -119,6 +119,7 @@ body {
   flex-direction: column;
   border-bottom: 1px solid #222;
   background: #181818;
+  padding: 2em 0 1em 0;
 }
 .offcanvas .navbar-brand img {
   filter: brightness(0.9) contrast(1.2);
@@ -275,4 +276,67 @@ form.d-flex .btn-outline-primary:focus {
 }
 .discord:hover {
   background:#4752C4 !important;
+}
+
+/* Base button style */
+.btn {
+  font-weight: 600;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  transform: scale(1);
+}
+
+/* Register (Gold) */
+.btn-register {
+  background: #FFC107 !important;
+  color: #000 !important;
+  border: 2px solid #FFC107 !important;
+  font-size: 14px;
+}
+.btn-register:hover {
+  background: #E0A800 !important;
+  color: #FFF !important;
+  border-color: #E0A800 !important;
+}
+.btn-register:active {
+  background: #C69500 !important;
+  border-color: #C69500 !important;
+  transform: scale(0.96) !important;
+}
+
+/* Download (Teal) */
+.btn-download {
+  background: #009E8C !important;
+  color: #FFF !important;
+  border: 2px #009E8C !important;
+}
+.btn-download:hover {
+  background: #00C6B4 !important;
+  color: #FFF !important;
+  border-color: solid #00C6B4 !important;
+}
+.btn-download:active {
+  background: #00796B !important;
+  border-color: #00796B !important;
+  transform: scale(0.96) !important;
+}
+
+/* Login (Light Gray) */
+.btn-login {
+  background: #E0E0E0 !important;
+  color: #000 !important;
+  border: 2px solid #E0E0E0 !important;
+  font-size: 14px;
+}
+.btn-login:hover {
+  background: #BDBDBD !important;
+  color: #FFF !important;
+  border-color: #BDBDBD !important;
+}
+.btn-login:active {
+  background: #9E9E9E !important;
+  color: #FFF !important;
+  border-color: #9E9E9E !important;
+  transform: scale(0.96) !important;
 }
