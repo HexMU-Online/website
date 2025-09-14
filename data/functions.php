@@ -41,7 +41,7 @@ function register($pdo, $username, $password, $email) {
         return [false, 'Invalid email address.'];
     }
     try {
-        $stmt = $pdo->prepare("SELECT COUNT(*) FROM MEMB_INFO WHERE memb___id = ?");
+        $stmt = $pdo->prepare("SELECT COUNT(*) FROM MEMB_INFO WHERE memb___id = ?"); 
         $stmt->execute([$username]);
         if ($stmt->fetchColumn() > 0) {
             return [false, 'Username already exists.'];
@@ -80,6 +80,18 @@ function login($pdo, $username, $password) {
     }
 }
 
+function get_user_wcoins($pdo, $username) {
+    // Returns the WCoinC amount for a user or 0 if not found/error.
+    try {
+        $stmt = $pdo->prepare("SELECT WCoinC FROM CashShopData WHERE AccountID = ?");
+        $stmt->execute([$username]);
+        $result = $stmt->fetchColumn();
+        return $result !== false ? (int)$result : 0;
+    } catch (PDOException $e) {
+        // Optionally log the error: error_log($e->getMessage());
+        return 0;
+    }
+}
 
 function get_top_players($pdo, $limit = 20) {
     // Assumes 'Character' table with 'Name', 'cLevel', 'Class', 'ResetCount'

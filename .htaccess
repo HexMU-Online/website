@@ -1,5 +1,8 @@
 RewriteEngine On
 
+# /logout or /logout/ → /api/logout.php (internal rewrite)
+RewriteRule ^logout/?$ data/api/logout.php [L]
+
 # Redirect /file/variable to /file.php?var=variable
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d

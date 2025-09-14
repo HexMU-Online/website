@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!-- Mobile Navbar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-lg-none position-fixed w-100 top-0" style="z-index:1030;">
   <div class="container-fluid">
@@ -24,10 +29,18 @@
   <div class="offcanvas-body d-flex flex-column p-0" style="height:100%;">
     <nav class="nav flex-column flex-grow-1 mt-3">
       <a class="btn btn-download mb-2 mx-2" href="/download/">Download</a>
-      <div class="d-flex gap-2 mx-2">
-        <a class="btn btn-login flex-grow-1" href="/login/">Login</a>
-        <a class="btn btn-register flex-grow-1" href="/register/">Register</a>
-      </div>
+      <?php if (isset($_SESSION['user'])): ?>
+        <div class="text-white text-center mx-2">Welcome, <strong><?php echo htmlspecialchars($_SESSION['user']); ?></strong>!</div>
+        <div class="d-flex gap-2 mx-2 mt-2">
+          <a class="btn btn-secondary flex-grow-1" href="/account/">My Account</a>
+          <a class="btn btn-danger flex-grow-1" href="/logout/">Logout</a>
+        </div>
+      <?php else: ?>
+        <div class="d-flex gap-2 mx-2">
+          <a class="btn btn-login flex-grow-1" href="/login/">Login</a>
+          <a class="btn btn-register flex-grow-1" href="/register/">Register</a>
+        </div>
+      <?php endif; ?>
       <a class="nav-link mt-3" href="/">Home</a>
       <a class="nav-link" href="/about/">About Server</a>
       <a class="nav-link" href="/ranking/">Rankings</a>
@@ -54,10 +67,18 @@
     </div>
     <nav class="nav flex-column flex-grow-1 mt-3">
       <a class="btn btn-download mb-2 mx-2" href="/download/">Download</a>
-      <div class="d-flex gap-2 mx-2">
-        <a class="btn btn-login flex-grow-1" href="/login/">Login</a>
-        <a class="btn btn-register flex-grow-1" href="/register/">Register</a>
-      </div>
+      <?php if (isset($_SESSION['user'])): ?>
+        <div class="text-white text-center mx-2">Welcome, <strong><?php echo htmlspecialchars($_SESSION['user']); ?></strong>!</div>
+        <div class="d-flex gap-2 mx-2 mt-2">
+          <a class="btn btn-secondary flex-grow-1" href="/dashboard/">My Account</a>
+          <a class="btn btn-danger flex-grow-1" href="/logout/">Logout</a>
+        </div>
+      <?php else: ?>
+        <div class="d-flex gap-2 mx-2">
+          <a class="btn btn-login flex-grow-1" href="/login/">Login</a>
+          <a class="btn btn-register flex-grow-1" href="/register/">Register</a>
+        </div>
+      <?php endif; ?>
       <a class="nav-link mt-3" href="/">Home</a>
       <a class="nav-link" href="/about/">About Server</a>
       <a class="nav-link" href="/ranking/">Rankings</a>

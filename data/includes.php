@@ -10,4 +10,4 @@
 <link rel="icon" href="/hexmu.ico" type="image/x-icon">
 
 <link href="/data/main.css?v=36" rel="stylesheet">
-<script src="/data/main.js?v=6"></script>
+<script src="/data/main.js?v=7"></script>

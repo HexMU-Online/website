@@ -60,4 +60,14 @@ $(document).ready(function() {
         });
     });
 
+    //if loginMessage div is on page & logout parameter is set, show this message
+    if ($('#loginMessage').length) {
+        const params = new URLSearchParams(window.location.search);
+        if (params.has('logout')) {
+            $('#loginMessage').html(
+                '<div class="alert alert-success" role="alert">You\'ve been successfully logged out.</div>'
+            );
+        }
+    }
+
 });

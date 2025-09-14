@@ -1,6 +1,11 @@
 <?php
 require_once '../functions.php';
 
+// Start the session only if one isn't already active
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+
 header('Content-Type: application/json');
 
 $username = trim($_POST['username'] ?? '');
