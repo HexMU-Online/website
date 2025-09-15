@@ -13,7 +13,10 @@ if ( ! isset( $_SESSION['user'] ) ) {
 require_once( 'data/config.php' );
 require_once( 'data/functions.php' );
 
-$wcoins = get_user_wcoins($pdo, $_SESSION['user']);
+/* $wcoins = get_user_wcoins($pdo, $_SESSION['user']); */
+$wcoins = 1000;
+/* $characters = get_user_characters($pdo, $_SESSION['user']); */
+$characters = [];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -31,9 +34,9 @@ $wcoins = get_user_wcoins($pdo, $_SESSION['user']);
 		<!-- Main Content -->
 		<div class="col-12 col-lg main-content">
 			<main class="py-4 px-4" style="max-width:100%;">
-				<h2 class="mb-4">Account Dashboard</h2>
-				<p>Welcome to your account dashboard. Here you can manage your account settings, view your characters, and check your activity.</p>
-				<!-- Additional account-related content can be added here -->
+				<h2 class="mb-4 heading">Account Dashboard</h2>
+				<p class="subheading">Welcome to your account dashboard. Here you can manage your account settings, view your characters, and check your activity.</p>
+
 
 				<div class="row">
 					<!-- Account Balance -->
@@ -43,7 +46,7 @@ $wcoins = get_user_wcoins($pdo, $_SESSION['user']);
 								<div class="row no-gutters align-items-center">
 									<div class="col mr-2">
 										<div class="text-xs font-weight-bold text-warning text-uppercase mb-1">Account Balance</div>
-										<div class="h5 mb-0 font-weight-bold text-gray-800"><?= number_format($wcoins); ?> WCoins</div>
+										<div class="h5 mb-0 font-weight-bold text-gray-800"><?= number_format( $wcoins ); ?> WCoins</div>
 									</div>
 									<div class="col-auto">
 										<div class="icon-holder text-light">
@@ -88,61 +91,62 @@ $wcoins = get_user_wcoins($pdo, $_SESSION['user']);
 					</div>
 				</div>
 
-				<h3 class="mt-4 mb-3">Manage Your Account</h3>
+				<h2 class="mb-4 heading">Your Characters</h2>
+				<p class="subheading">View your active characters, stats and preview links.</p>
 
-				<div class="row row-cols-2 row-cols-md-4 g-4">
-
-					<!-- Characters -->
-					<div class="col">
-						<a href="/dashboard/characters.php" class="card h-100 text-decoration-none shadow-sm hover-shadow">
-							<div class="card-body d-flex align-items-center">
-								<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="me-3 text-primary" viewBox="0 0 16 16">
-									<path d="M3 14s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1H3Zm5-6a3 3 0 1 0-0.001-6.001A3 3 0 0 0 8 8Z" />
-								</svg>
-								<h5 class="mb-0 text-light">View Characters</h5>
+				<div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
+					<?php if ( empty( $characters ) ) : ?>
+						<div class="col-12">
+							<div class="alert alert-info">You have not created any characters yet.</div>
+						</div>
+					<?php else : ?>
+						<?php foreach ( $characters as $char ) : ?>
+							<div class="col">
+								<div class="card h-100 character-card">
+									<img src="/data/images/classes/<?php echo $char['Class']; ?>.jpg" class="card-img-top" alt="<?php echo htmlspecialchars( class_id_to_name( $char['Class'] ) ); ?>">
+									<div class="card-body d-flex flex-column">
+										<h5 class="card-title text-center fw-bold"><?php echo htmlspecialchars( $char['Name'] ); ?></h5>
+										<ul class="list-unstyled mt-2 mb-3 flex-grow-1">
+											<li class="d-flex justify-content-between">
+												<strong>Class:</strong>
+												<span><?php echo htmlspecialchars( class_id_to_name( $char['Class'] ) ); ?></span>
+											</li>
+											<li class="d-flex justify-content-between">
+												<strong>Level:</strong>
+												<span><?php echo htmlspecialchars( $char['cLevel'] ); ?></span>
+											</li>
+											<li class="d-flex justify-content-between">
+												<strong>Resets:</strong>
+												<span><?php echo htmlspecialchars( $char['ResetCount'] ); ?></span>
+											</li>
+										</ul>
+										<a href="/character/<?php echo htmlspecialchars( $char['Name'] ); ?>" class="btn btn-sm btn-primary mt-auto">View Details</a>
+									</div>
+								</div>
 							</div>
-						</a>
-					</div>
-
-					<!-- Subscription -->
-					<div class="col">
-						<a href="/dashboard/subscription.php" class="card h-100 text-decoration-none shadow-sm">
-							<div class="card-body d-flex align-items-center">
-								<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="me-3 text-success" viewBox="0 0 16 16">
-									<path d="M0 4a2 2 0 0 1 2-2h1v2H2v8h1v2H2a2 2 0 0 1-2-2V4zM15 4a2 2 0 0 0-2-2h-1v2h1v8h-1v2h1a2 2 0 0 0 2-2V4z" />
-								</svg>
-								<h5 class="mb-0 text-light">Manage Funds</h5>
-							</div>
-						</a>
-					</div>
-
-					<!-- Settings -->
-					<div class="col">
-						<a href="/dashboard/settings.php" class="card h-100 text-decoration-none shadow-sm">
-							<div class="card-body d-flex align-items-center">
-								<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="me-3 text-secondary" viewBox="0 0 16 16">
-									<path d="M9.405 1.05c-.413-1.23-2.397-1.23-2.81 0l-.25.75a1.87 1.87 0 0 1-1.087 1.17l-.67.27c-1.184.475-1.184 2.117 0 2.592l.67.27c.47.192.845.58 1.087 1.17l.25.75c.413 1.23 2.397 1.23 2.81 0l.25-.75a1.87 1.87 0 0 1 1.087-1.17l.67-.27c1.184-.475 1.184-2.117 0-2.592l-.67-.27a1.87 1.87 0 0 1-1.087-1.17l-.25-.75z" />
-								</svg>
-								<h5 class="mb-0 text-light">Account Settings</h5>
-							</div>
-						</a>
-					</div>
-
-					<!-- Change Password -->
-					<div class="col">
-						<a href="/dashboard/changepass.php" class="card h-100 text-decoration-none shadow-sm">
-							<div class="card-body d-flex align-items-center">
-								<svg xmlns="http://www.w3.org/2000/svg" width="42" height="42" fill="currentColor" class="me-3 text-warning" viewBox="0 0 16 16">
-									<path d="M8 5a3 3 0 0 0-3 3v2h6V8a3 3 0 0 0-3-3z" />
-									<path d="M3 8a5 5 0 1 1 10 0v2H3V8z" />
-								</svg>
-								<h5 class="mb-0 text-light">Change Password</h5>
-							</div>
-						</a>
-					</div>
+						<?php endforeach; ?>
+					<?php endif; ?>
 				</div>
 
+				<h2 class="mb-4 heading">Account Actions</h2>
+				<p class="subheading">Manage your account settings, get more WC or log out.</p>
 
+				<div class="action-row d-flex flex-wrap gap-3">
+					<a href="/donate" class="btn btn-action highlight d-flex align-items-center gap-3">
+						<div class="mb-0 text-light">GET MORE WCOINS</div>
+						<div class="icon-holder text-light"><?php include 'data/images/icons/donate.svg' ?></div>
+					</a>
+
+					<a href="/dashboard/settings" class="btn btn-action d-flex align-items-center gap-3">
+						<div class="mb-0 text-light">ACCOUNT SETTINGS</div>
+						<div class="icon-holder text-light"><?php include 'data/images/icons/account.svg' ?></div>
+					</a>
+
+					<a href="/logout" class="btn btn-action d-flex align-items-center gap-3">
+						<div class="mb-0 text-light">LOG OUT</div>
+						<div class="icon-holder text-light"><?php include 'data/images/icons/logout.svg' ?></div>
+					</a>
+				</div>
 
 			</main>
 		</div>

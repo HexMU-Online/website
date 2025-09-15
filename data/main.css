@@ -1,11 +1,27 @@
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
+  font-family: "Work Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
 a {
   color: rgb(126 172 239);
   text-decoration: none;
+}
+
+:root {
+  --accent: #22D4E1;
+  --dark: #181818;
+  --secondary: #FFC107;
+  --dark-secondary: #A37744;
+  --dark-accent: #189AA3;
+  --dark-lighter: #212121;
+  --dark-blue: #182433;
+  --light-brown: #8D7D7D;
 }
 
 @media (min-width: 992px) {
@@ -31,7 +47,8 @@ a {
     color: #e0e0e0;
   }
   body {
-    padding-top: 56px; /* Height of the navbar */
+    padding-top: 56px;
+    /* Height of the navbar */
   }
   .navbar {
     border-bottom: 1px solid #333;
@@ -196,8 +213,11 @@ form.d-flex .btn-outline-primary:focus {
 }
 .hero-overlay {
   position: absolute;
-  top: 0; left: 0; width: 100%; height: 100%;
-  background: rgba(0,0,0,0.55);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
   z-index: 1;
 }
 .hero-content {
@@ -221,6 +241,7 @@ form.d-flex .btn-outline-primary:focus {
 .hero-btn {
   margin: 0 0.5rem;
   min-width: 140px;
+  text-shadow: none;
 }
 /* Features Section */
 .features-section {
@@ -256,10 +277,13 @@ form.d-flex .btn-outline-primary:focus {
 }
 .online {
   font-size: 0.9em;
+  letter-spacing: 0.13em;
+  text-transform: uppercase;
 }
 
-#login, #register {
-  background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url("/data/images/register-bg.png") center center/cover no-repeat;
+#login,
+#register {
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url("/data/images/register-bg.png") center center/cover no-repeat;
   height: 100%;
   max-width: 100%;
 }
@@ -269,13 +293,13 @@ form.d-flex .btn-outline-primary:focus {
   margin-bottom: 15px;
 }
 .discord {
-  color: white !important; 
-  background:#5865F2;
-  border-radius:0.5em;
-  padding:0.5em 1em;
+  color: white !important;
+  background: #5865F2;
+  border-radius: 0.5em;
+  padding: 0.5em 1em;
 }
 .discord:hover {
-  background:#4752C4 !important;
+  background: #4752C4 !important;
 }
 
 /* Base button style */
@@ -305,20 +329,25 @@ form.d-flex .btn-outline-primary:focus {
   transform: scale(0.96) !important;
 }
 
-/* Download (Teal) */
+/* Download (Gold) */
 .btn-download {
-  background: #009E8C !important;
+  background: #f9b22a !important;
   color: #FFF !important;
-  border: 2px #009E8C !important;
+  border: 2px #f9b22a !important;
+  text-transform: uppercase;
+  font-size: 1.5rem;
+  padding: .7rem .5rem;
+  letter-spacing: 0.1rem;
+  font-weight: bold;
 }
 .btn-download:hover {
-  background: #00C6B4 !important;
+  background: #fdc04e !important;
   color: #FFF !important;
-  border-color: solid #00C6B4 !important;
+  border-color: #fdc04e !important;
 }
 .btn-download:active {
-  background: #00796B !important;
-  border-color: #00796B !important;
+  background: #ce8d15 !important;
+  border-color: #ce8d15 !important;
   transform: scale(0.96) !important;
 }
 
@@ -339,4 +368,25 @@ form.d-flex .btn-outline-primary:focus {
   color: #FFF !important;
   border-color: #9E9E9E !important;
   transform: scale(0.96) !important;
+}
+
+/* Action */
+.btn-action {
+  background: var(--light-brown) !important;
+  color: #fff !important;
+  border: 2px solid var(--light-brown) !important;
+  font-size: 16px!important;
+  border-radius: 999px;
+  padding: 7px 20px;
+  font-weight: 400;
+}
+.btn-action.highlight {
+  background: var(--dark-accent) !important;
+  color: #fff !important;
+  border-color: var(--dark-accent) !important;
+}
+.btn-action:hover {
+  background: #BDBDBD !important;
+  color: #FFF !important;
+  border-color: #BDBDBD !important;
 }

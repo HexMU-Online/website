@@ -1,3 +1,8 @@
+<?php
+if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -21,8 +26,8 @@
                 Relive the classic <span class="fw-bold text-warning">MU Online</span> experience <br/>
                 with modern features, balanced gameplay, and a vibrant community.
               </div>
-              <a href="/register/" class="btn btn-warning btn-lg hero-btn shadow">Register</a>
-              <a href="/download/" class="btn btn-outline-light btn-lg hero-btn shadow">Download</a>
+              <a href="/register/" class="btn btn-warning btn-lg hero-btn">Register</a>
+              <a href="/download/" class="btn btn-outline-light btn-lg hero-btn">Download</a>
             </div>
           </section>
 

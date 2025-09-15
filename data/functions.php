@@ -93,6 +93,23 @@ function get_user_wcoins($pdo, $username) {
     }
 }
 
+function get_user_characters($pdo, $username) {
+    // Returns an array of characters for a given account.
+    try {
+        $stmt = $pdo->prepare(
+            "SELECT Name, cLevel, Class, ResetCount 
+             FROM Character 
+             WHERE AccountID = ? 
+             ORDER BY cLevel DESC"
+        );
+        $stmt->execute([$username]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    } catch (PDOException $e) {
+        // Optionally log the error: error_log($e->getMessage());
+        return [];
+    }
+}
+
 function get_top_players($pdo, $limit = 20) {
     // Assumes 'Character' table with 'Name', 'cLevel', 'Class', 'ResetCount'
     // and 'GuildMember' table with 'Name', 'G_Name'
