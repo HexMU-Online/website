@@ -13,5 +13,5 @@
 
 <link rel="icon" href="/hexmu.ico" type="image/x-icon">
 
-<link href="/data/main.css?v=371" rel="stylesheet">
-<script src="/data/main.js?v=7"></script>
+<link href="/data/main.css?v=<?php echo filemtime($_SERVER['DOCUMENT_ROOT'] . '/data/main.css'); ?>" rel="stylesheet">
+<script src="/data/main.js?v=<?php echo filemtime($_SERVER['DOCUMENT_ROOT'] . '/data/main.js'); ?>"></script>
