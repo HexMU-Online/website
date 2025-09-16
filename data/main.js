@@ -60,6 +60,70 @@ $(document).ready(function() {
         });
     });
 
+    $('#forgotPasswordForm').on('submit', function(e) {
+        e.preventDefault();
+        $('#forgotPasswordMessage').html('');
+        $('#resetBtn').prop('disabled', true).text('Sending...');
+
+        $.ajax({
+            url: '/data/api/forgot-password.php',
+            type: 'POST',
+            data: $(this).serialize(),
+            dataType: 'json',
+            success: function(response) {
+                if (response.success) {
+                    $('#forgotPasswordMessage').html('<div class="alert alert-success" role="alert">If an account with that email exists, a password reset link has been sent.</div>');
+                    $('#forgotPasswordForm')[0].reset();
+                } else {
+                    $('#forgotPasswordMessage').html('<div class="alert alert-danger" role="alert">' + (response.error || 'An unexpected error occurred.') + '</div>');
+                }
+            },
+            error: function() {
+                $('#forgotPasswordMessage').html('<div class="alert alert-danger" role="alert">Could not send reset link. Please try again later.</div>');
+            },
+            complete: function() {
+                $('#resetBtn').prop('disabled', false).text('Send Reset Link');
+                // Re-validate to set button state correctly after form reset
+                const username = document.getElementById("username");
+                const resetBtn = document.getElementById("resetBtn");
+                resetBtn.disabled = !username.validity.valid;
+                resetBtn.classList.toggle('btn-warning', username.validity.valid);
+            }
+        });
+    });
+
+    $('#resetPasswordForm').on('submit', function(e) {
+        e.preventDefault();
+        $('#resetPasswordMessage').html('');
+        $('#updatePasswordBtn').prop('disabled', true).text('Updating...');
+
+        $.ajax({
+            url: '/data/api/reset-password.php',
+            type: 'POST',
+            data: $(this).serialize(),
+            dataType: 'json',
+            success: function(response) {
+                if (response.success) {
+                    $('#resetPasswordMessage').html('<div class="alert alert-success" role="alert">' + response.message + '</div>');
+                    $('#resetPasswordForm').hide();
+                    // Optionally, add a link to the login page
+                    $('#resetPasswordMessage').after('<div class="text-center mt-3"><a href="/login/" class="btn btn-primary">Go to Login</a></div>');
+                } else {
+                    $('#resetPasswordMessage').html('<div class="alert alert-danger" role="alert">' + (response.error || 'An unexpected error occurred.') + '</div>');
+                }
+            },
+            error: function() {
+                $('#resetPasswordMessage').html('<div class="alert alert-danger" role="alert">Could not update password. Please try again later.</div>');
+            },
+            complete: function() {
+                // Don't re-enable the button on success, as the form is hidden
+                if (!$('#resetPasswordForm').is(':hidden')) {
+                    $('#updatePasswordBtn').prop('disabled', false).text('Update Password');
+                }
+            }
+        });
+    });
+
     //if loginMessage div is on page & logout parameter is set, show this message
     if ($('#loginMessage').length) {
         const params = new URLSearchParams(window.location.search);

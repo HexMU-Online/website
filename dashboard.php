@@ -37,8 +37,6 @@ $characters = []; // Initial value, will be updated by AJAX
 						<h2 class="heading">Account Dashboard</h2>
 						<p class="subheading">Welcome to your account dashboard. Here you can manage your account settings, view your characters, and check your activity.</p>
 					</div>
-
-
 					<div class="row account-standing">
 						<!-- Account Balance -->
 						<div class="col account-standing-box h-100">
@@ -92,33 +90,7 @@ $characters = []; // Initial value, will be updated by AJAX
 						</div>
 					</div>
 				</section>
-				<section>
-					<div class="section-header">
-						<h2 class="heading">Your Characters</h2>
-						<p class="subheading">View your active characters, stats and preview links.</p>
-					</div>
 
-
-					<div id="character-list" class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-4">
-						<!-- Character cards will be loaded here by AJAX -->
-						<?php for ($i = 0; $i < 4; $i++) : ?>
-						<div class="col placeholder-glow character-card-placeholder">
-							<div class="placeholder-card h-100">
-								<div class="placeholder-item card-img-top"></div>
-								<div class="card-body d-flex flex-column">
-									<div class="placeholder-item" style="height: 24px; width: 70%; margin: 0 auto 1rem auto;"></div>
-									<ul class="list-unstyled mt-2 mb-3 flex-grow-1">
-										<li class="d-flex justify-content-between"><div class="placeholder-item" style="height: 16px; width: 40%;"></div><div class="placeholder-item" style="height: 16px; width: 50%;"></div></li>
-										<li class="d-flex justify-content-between"><div class="placeholder-item" style="height: 16px; width: 40%;"></div><div class="placeholder-item" style="height: 16px; width: 20%;"></div></li>
-										<li class="d-flex justify-content-between"><div class="placeholder-item" style="height: 16px; width: 40%;"></div><div class="placeholder-item" style="height: 16px; width: 15%;"></div></li>
-									</ul>
-									<div class="placeholder-item" style="height: 31px; width: 100%;"></div>
-								</div>
-							</div>
-						</div>
-						<?php endfor; ?>
-					</div>
-				</section>
 				<section>
 					<div class="section-header">
 						<h2 class="heading">Account Actions</h2>
@@ -141,6 +113,35 @@ $characters = []; // Initial value, will be updated by AJAX
 						</a>
 					</div>
 				</section>
+
+				<section>
+					<div class="section-header">
+						<h2 class="heading">Your Characters</h2>
+						<p class="subheading">View your active characters, stats and preview links.</p>
+					</div>
+
+
+					<div id="character-list" class="row row-cols-1 row-cols-md-3  row-cols-lg-2  row-cols-xl-4 g-2">
+						<!-- Character cards will be loaded here by AJAX -->
+						<?php for ($i = 0; $i < 5; $i++) : ?>
+						<div class="col placeholder-glow character-card-placeholder">
+							<div class="placeholder-card h-100">
+								<div class="placeholder-item card-img-top"></div>
+								<div class="card-body d-flex flex-column">
+									<div class="placeholder-item" style="height: 24px; width: 70%; margin: 0 auto 1rem auto;"></div>
+									<ul class="list-unstyled mt-2 mb-4 flex-grow-1">
+									
+										<li class="d-flex justify-content-between"><div class="placeholder-item" style="height: 16px; width: 40%;"></div><div class="placeholder-item" style="height: 16px; width: 20%;"></div></li>
+										<li class="d-flex justify-content-between"><div class="placeholder-item" style="height: 16px; width: 40%;"></div><div class="placeholder-item" style="height: 16px; width: 15%;"></div></li>
+									</ul>
+									<div class="placeholder-item" style="height: 44px; width: 100%; border-radius: 999px;"></div>
+								</div>
+							</div>
+						</div>
+						<?php endfor; ?>
+					</div>
+				</section>
+				
 			</main>
 		</div>
 	</div>
@@ -184,21 +185,34 @@ $characters = []; // Initial value, will be updated by AJAX
 						return classNames[classId] || 'Unknown';
 					}
 
+					function getClassImageId(classId) {
+						const id = parseInt(classId, 10);
+						if (id >= 0 && id <= 2) return 0; // Dark Wizard, Soul Master, Grand Master
+						if (id >= 16 && id <= 18) return 16; // Dark Knight, Blade Knight, Blade Master
+						if (id >= 32 && id <= 34) return 32; // Fairy Elf, Muse Elf, High Elf
+						if (id >= 48 && id <= 49) return 48; // Magic Gladiator, Duel Master
+						if (id >= 64 && id <= 66) return 64; // Dark Lord, Lord Emperor
+						if (id >= 80 && id <= 82) return 80; // Summoner, Bloody Summoner, Dimension Master
+						if (id >= 96 && id <= 97) return 96; // Rage Fighter, Fist Master
+						return id; // Fallback to the original ID if not in a known range
+					}
+
 					response.characters.forEach(function(char) {
 						const className = getClassName(char.Class);
+						const classImageId = getClassImageId(char.Class);
 						const characterCard = `
 							<div class="col">
 								<div class="card h-100 character-card">
-									<img src="/data/images/classes/${char.Class}.jpg" class="card-img-top" alt="${className}">
+									<img src="/data/images/classes/${classImageId}.jpg" class="card-img-top" alt="${className}">
 									<div class="card-body d-flex flex-column">
 										<h5 class="card-title text-center fw-bold">${char.Name}</h5>
-										<ul class="list-unstyled mt-2 mb-3 flex-grow-1">
-											<li class="d-flex justify-content-between"><strong>Class:</strong> <span>${className}</span></li>
-											<li class="d-flex justify-content-between"><strong>Level:</strong> <span>${char.cLevel}</span></li>
-											<li class="d-flex justify-content-between"><strong>Resets:</strong> <span>${char.ResetCount}</span></li>
+										<ul class="list-unstyled mt-2 mb-4 flex-grow-1">
+											<li class="d-flex justify-content-between character-card--detail"><div class="character-card--detail-title">CHAR. LVL:</div> <div class="character-card--detail-value">${char.cLevel}</div></li>
+											<li class="d-flex justify-content-between character-card--detail"><div class="character-card--detail-title">Resets:</div> <div  class="character-card--detail-value">${char.ResetCount}</div></li>
 										</ul>
-										<a href="/character/${char.Name}" class="btn btn-sm btn-primary mt-auto">View Details</a>
+										
 									</div>
+									<a href="/character/${char.Name}" class="btn btn-card mt-auto"><div class="w-100">View Character</div> <?php include 'data/images/icons/viewCharacter.svg'; ?></a>
 								</div>
 							</div>`;
 						characterList.append(characterCard);

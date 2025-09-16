@@ -63,6 +63,16 @@ if (session_status() === PHP_SESSION_NONE) {
                 </div>
                 <div class="col-md-6 col-lg-4">
                   <div class="card bg-dark text-white h-100 shadow-sm border-0">
+                    <img src="/data/images/features/discord-integration.jpg" class="card-img-top" alt="Discord Integration">
+                    <div class="card-body text-center">
+                      <span class="feature-icon"><i class="bi bi-discord"></i></span>
+                      <h6 class="fw-bold">Discord Integration</h6>
+                      <p>Stay connected and get updates directly on Discord.</p>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                  <div class="card bg-dark text-white h-100 shadow-sm border-0">
                     <img src="/data/images/features/battle-pass.jpg" class="card-img-top" alt="Battle Pass">
                     <div class="card-body text-center">
                       <span class="feature-icon"><i class="bi bi-award"></i></span>
@@ -83,16 +93,6 @@ if (session_status() === PHP_SESSION_NONE) {
                 </div>
                 <div class="col-md-6 col-lg-4">
                   <div class="card bg-dark text-white h-100 shadow-sm border-0">
-                    <img src="/data/images/features/master-level.jpg" class="card-img-top" alt="Master Level">
-                    <div class="card-body text-center">
-                      <span class="feature-icon"><i class="bi bi-graph-up-arrow"></i></span>
-                      <h6 class="fw-bold">Master Level</h6>
-                      <p>Advance beyond the basics with Master Level progression.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                  <div class="card bg-dark text-white h-100 shadow-sm border-0">
                     <img src="/data/images/features/sockets.jpg" class="card-img-top" alt="Sockets">
                     <div class="card-body text-center">
                       <span class="feature-icon"><i class="bi bi-gem"></i></span>
@@ -103,11 +103,14 @@ if (session_status() === PHP_SESSION_NONE) {
                 </div>
                 <div class="col-md-6 col-lg-4">
                   <div class="card bg-dark text-white h-100 shadow-sm border-0">
-                    <img src="/data/images/features/characters.jpg" class="card-img-top" alt="Multiple Characters">
+                    <!-- Example YouTube video embed -->
+                    <div class="ratio ratio-16x9">
+                      <iframe src="https://www.youtube.com/embed/4YzzzCe5-qg" title="Discord Integration" allowfullscreen></iframe>
+                    </div>
                     <div class="card-body text-center">
                       <span class="feature-icon"><i class="bi bi-person-badge"></i></span>
                       <h6 class="fw-bold">Multiple Characters</h6>
-                      <p>Play with X character classes, each with unique skills.</p>
+                      <p>Play with 7 character classes, each with unique skills.</p>
                     </div>
                   </div>
                 </div>
@@ -123,23 +126,10 @@ if (session_status() === PHP_SESSION_NONE) {
                 </div>
                 <div class="col-md-6 col-lg-4">
                   <div class="card bg-dark text-white h-100 shadow-sm border-0">
-                    <!-- Example YouTube video embed for Discord Bot -->
-                    <div class="ratio ratio-16x9">
-                      <!-- <iframe src="https://www.youtube.com/embed/VIDEO_ID" title="Discord Bot" allowfullscreen></iframe>-->
-                    </div>
-                    <div class="card-body text-center">
-                      <span class="feature-icon"><i class="bi bi-discord"></i></span>
-                      <h6 class="fw-bold">Discord Bot</h6>
-                      <p>Stay connected and get updates directly on Discord.</p>
-                    </div>
-                  </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                  <div class="card bg-dark text-white h-100 shadow-sm border-0">
                     <img src="/data/images/features/offattack.jpg" class="card-img-top" alt="OffAttack">
                     <div class="card-body text-center">
-                      <span class="feature-icon"><i class="bi bi-cpu"></i></span>
-                      <h6 class="fw-bold">OffAttack</h6>
+                      <span class="feature-icon"><i class="bi bi-graph-up-arrow"></i></span>
+                      <h6 class="fw-bold">OffAttack and OffStore</h6>
                       <p>Train and farm even while offline with OffAttack mode.</p>
                     </div>
                   </div>
