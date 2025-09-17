@@ -40,7 +40,7 @@ if (session_status() === PHP_SESSION_NONE) {
                   <p class="text-secondary">HexMU Online - 25 EXP - Low Drop</p>
                 </div>
               </div>
-              <div class="row g-4">
+              <div class="row g-4 justify-content-center">
                 <div class="col-md-6 col-lg-4">
                   <div class="card bg-dark text-white h-100 shadow-sm border-0">
                     <img src="/data/images/features/daily-rewards.jpg" class="card-img-top" alt="Daily Rewards">
@@ -67,7 +67,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     <div class="card-body text-center">
                       <span class="feature-icon"><i class="bi bi-discord"></i></span>
                       <h6 class="fw-bold">Discord Integration</h6>
-                      <p>Stay connected and get updates directly on Discord.</p>
+                      <p>Stay connected and get updates directly on <a href="/discord/" target="_blank">Discord</a>.</p>
                     </div>
                   </div>
                 </div>
@@ -93,14 +93,15 @@ if (session_status() === PHP_SESSION_NONE) {
                 </div>
                 <div class="col-md-6 col-lg-4">
                   <div class="card bg-dark text-white h-100 shadow-sm border-0">
-                    <img src="/data/images/features/sockets.jpg" class="card-img-top" alt="Sockets">
+                    <img src="/data/images/features/combo.jpg" class="card-img-top" alt="Combo System">
                     <div class="card-body text-center">
                       <span class="feature-icon"><i class="bi bi-gem"></i></span>
-                      <h6 class="fw-bold">Sockets</h6>
-                      <p>Enhance your gear with powerful socket options.</p>
+                      <h6 class="fw-bold">All-Class Combo</h6>
+                      <p>Unleash powerful combos with every character using 2 of <a href="#" target="_blank">these spells</a>.</p>
                     </div>
                   </div>
                 </div>
+                <?php /*
                 <div class="col-md-6 col-lg-4">
                   <div class="card bg-dark text-white h-100 shadow-sm border-0">
                     <!-- Example YouTube video embed -->
@@ -114,13 +115,14 @@ if (session_status() === PHP_SESSION_NONE) {
                     </div>
                   </div>
                 </div>
+                */ ?>
                 <div class="col-md-6 col-lg-4">
                   <div class="card bg-dark text-white h-100 shadow-sm border-0">
-                    <img src="/data/images/features/events.jpg" class="card-img-top" alt="Events & Invasions">
+                    <img src="/data/images/features/10-man-party.jpg" class="card-img-top" alt="10 Man Party">
                     <div class="card-body text-center">
                       <span class="feature-icon"><i class="bi bi-trophy"></i></span>
-                      <h6 class="fw-bold">Events & Invasions</h6>
-                      <p>Participate in X events and X invasions for epic loot.</p>
+                      <h6 class="fw-bold">10 Man Party</h6>
+                      <p>Team up with twice as many players for bigger battles and premium experience.</p>
                     </div>
                   </div>
                 </div>
@@ -130,7 +132,7 @@ if (session_status() === PHP_SESSION_NONE) {
                     <div class="card-body text-center">
                       <span class="feature-icon"><i class="bi bi-graph-up-arrow"></i></span>
                       <h6 class="fw-bold">OffAttack and OffStore</h6>
-                      <p>Train and farm even while offline with OffAttack mode.</p>
+                      <p>Keep training with OffAttack and sell items anytime with OffStore, even while offline.</p>
                     </div>
                   </div>
                 </div>
