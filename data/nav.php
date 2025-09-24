@@ -25,7 +25,7 @@
 		<nav class="nav flex-column flex-grow-1 mt-3">
 			<a class="btn btn-download mb-4 mx-2" href="/download/">Download</a>
 			<?php if ( isset( $_SESSION['user'] ) ) : ?>
-				<div class="text-white text-center mx-2"><div class="icon-holder greet-icon"><?php include 'data/images/icons/hello.svg'; ?></div> Welcome, <strong class="color-my-dark-accent"><?php echo htmlspecialchars( $_SESSION['user'] ); ?></strong>!</div>
+				<div class="text-white text-center mx-2"><div class="icon-holder greet-icon"><?php include 'data/images/icons/hello.svg'; ?></div> Welcome, <a href="/dashboard/" title="Account Dashboard"><strong class="color-my-dark-accent"><?php echo htmlspecialchars( $_SESSION['user'] ); ?></strong></a>!</div>
 			<?php endif; ?>
 			<a class="nav-link mt-2" href="/">Home</a>
 			<a class="nav-link" href="/about/">About Server</a>
@@ -61,7 +61,7 @@
 		<nav class="nav flex-column flex-grow-1 mt-3">
 			<a class="btn btn-download mb-4 mx-2" href="/download/">Download</a>
 			<?php if ( isset( $_SESSION['user'] ) ) : ?>
-				<div class="text-white text-center mx-2"> <div class="icon-holder greet-icon"><?php include 'data/images/icons/hello.svg'; ?></div> Welcome, <strong class="color-my-dark-accent"><?php echo htmlspecialchars( $_SESSION['user'] ); ?></strong>!</div>
+				<div class="text-white text-center mx-2"> <div class="icon-holder greet-icon"><?php include 'data/images/icons/hello.svg'; ?></div> Welcome, <a href="/dashboard/" title="Account Dashboard"><strong class="color-my-dark-accent"><?php echo htmlspecialchars( $_SESSION['user'] ); ?></strong></a>!</div>
 			<?php endif; ?>
 			<a class="nav-link mt-2" href="/">Home</a>
 			<a class="nav-link" href="/about/">About Server</a>
