@@ -27,15 +27,15 @@
 			<?php if ( isset( $_SESSION['user'] ) ) : ?>
 				<div class="text-white text-center mx-2"><div class="icon-holder greet-icon"><?php include 'data/images/icons/hello.svg'; ?></div> Welcome, <a href="/dashboard/" title="Account Dashboard"><strong class="color-my-dark-accent"><?php echo htmlspecialchars( $_SESSION['user'] ); ?></strong></a>!</div>
 			<?php endif; ?>
-			<a class="nav-link mt-2" href="/">Home</a>
-			<a class="nav-link" href="/about/">About Server</a>
-			<a class="nav-link" href="/ranking/">Rankings</a>
+			<a class="nav-link mt-2" href="/"><i class="bi bi-house-door me-2"></i>Home</a>
+			<a class="nav-link" href="/about/"><i class="bi bi-info-circle me-2"></i>About Server</a>
+			<a class="nav-link" href="/ranking/"><i class="bi bi-bar-chart-line me-2"></i>Rankings</a>
 			<?php if ( isset( $_SESSION['user'] ) ) : ?>
-				<a class="nav-link" href="/dashboard/">My Account</a>
-				<a class="nav-link" href="/logout/">Logout</a>
+				<a class="nav-link" href="/dashboard/"><i class="bi bi-person-circle me-2"></i>My Account</a>
+				<a class="nav-link" href="/logout/"><i class="bi bi-box-arrow-right me-2"></i>Logout</a>
 			<?php else : ?>
-				<a class="nav-link" href="/login/">Login</a>
-				<a class="nav-link" href="/register/">Register</a>
+				<a class="nav-link" href="/login/"><i class="bi bi-box-arrow-in-right me-2"></i>Login</a>
+				<a class="nav-link" href="/register/"><i class="bi bi-person-plus me-2"></i>Register</a>
 			<?php endif; ?>
 		</nav>
 		<a class="nav-link mt-auto text-white d-flex align-items-center justify-content-center discord" href="/discord/" target="_blank">
@@ -63,15 +63,15 @@
 			<?php if ( isset( $_SESSION['user'] ) ) : ?>
 				<div class="text-white text-center mx-2"> <div class="icon-holder greet-icon"><?php include 'data/images/icons/hello.svg'; ?></div> Welcome, <a href="/dashboard/" title="Account Dashboard"><strong class="color-my-dark-accent"><?php echo htmlspecialchars( $_SESSION['user'] ); ?></strong></a>!</div>
 			<?php endif; ?>
-			<a class="nav-link mt-2" href="/">Home</a>
-			<a class="nav-link" href="/about/">About Server</a>
-			<a class="nav-link" href="/ranking/">Rankings</a>
-      	<?php if ( isset( $_SESSION['user'] ) ) : ?>
-				<a class="nav-link" href="/dashboard/">My Account</a>
-				<a class="nav-link" href="/logout/">Logout</a>
+			<a class="nav-link mt-2" href="/"><i class="bi bi-house-door me-2"></i>Home</a>
+			<a class="nav-link" href="/about/"><i class="bi bi-info-circle me-2"></i>About Server</a>
+			<a class="nav-link" href="/ranking/"><i class="bi bi-bar-chart-line me-2"></i>Rankings</a>
+      		<?php if ( isset( $_SESSION['user'] ) ) : ?>
+				<a class="nav-link" href="/dashboard/"><i class="bi bi-person-circle me-2"></i>My Account</a>
+				<a class="nav-link" href="/logout/"><i class="bi bi-box-arrow-right me-2"></i>Logout</a>
 			<?php else : ?>
-				<a class="nav-link" href="/login/">Login</a>
-				<a class="nav-link" href="/register/">Register</a>
+				<a class="nav-link" href="/login/"><i class="bi bi-box-arrow-in-right me-2"></i>Login</a>
+				<a class="nav-link" href="/register/"><i class="bi bi-person-plus me-2"></i>Register</a>
 			<?php endif; ?>
 		</nav>
 		<a class="nav-link mt-auto text-white d-flex align-items-center justify-content-center mx-2 my-3 discord" href="/discord/" target="_blank">

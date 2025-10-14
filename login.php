@@ -47,6 +47,50 @@
       const loginBtn = document.getElementById("loginBtn");
       const username = document.getElementById("username");
       const password = document.getElementById("password");
+      const loginForm = document.getElementById("loginForm");
+      const loginMessage = document.getElementById("loginMessage");
+
+      loginForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        loginBtn.disabled = true;
+        loginBtn.innerHTML = '<span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span> Logging in...';
+
+        const formData = new FormData(loginForm);
+        const urlParams = new URLSearchParams(window.location.search);
+
+        fetch('/data/api/login.php', {
+            method: 'POST',
+            body: formData
+          })
+          .then(response => response.json())
+          .then(data => {
+            if (data.success) {
+              loginMessage.innerHTML = `<div class="alert alert-success">${data.message || 'Login successful! Redirecting...'}</div>`;
+              // Handle redirect
+              if (urlParams.has('redirect')) {
+                // Reconstruct the URL with all original parameters
+                const redirectUrl = urlParams.get('redirect');
+                urlParams.delete('redirect'); // remove it so it's not duplicated
+                const remainingParams = urlParams.toString();
+                
+                // Construct the final URL, adding '?' only if there are other parameters
+                const finalUrl = remainingParams ? `${redirectUrl}?${remainingParams}` : redirectUrl;
+                window.location.href = finalUrl;
+              } else {
+                window.location.href = '/dashboard/';
+              }
+            } else {
+              loginMessage.innerHTML = `<div class="alert alert-danger">${data.message}</div>`;
+              loginBtn.disabled = false;
+              loginBtn.innerHTML = 'Login';
+            }
+          })
+          .catch(error => {
+            loginMessage.innerHTML = '<div class="alert alert-danger">An unexpected error occurred. Please try again.</div>';
+            loginBtn.disabled = false;
+            loginBtn.innerHTML = 'Login';
+          });
+      });
 
       function validateLoginForm() {
         const userOk = username.value.length >= 3;
