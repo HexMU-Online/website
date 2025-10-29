@@ -25,7 +25,7 @@
 		<nav class="nav flex-column flex-grow-1 mt-3">
 			<a class="btn btn-download mb-4 mx-2" href="/download/">Download</a>
 			<?php if ( isset( $_SESSION['user'] ) ) : ?>
-				<div class="text-white text-center mx-2"><div class="icon-holder greet-icon"><?php include 'data/images/icons/hello.svg'; ?></div> Welcome, <a href="/dashboard/" title="Account Dashboard"><strong class="color-my-dark-accent"><?php echo htmlspecialchars( $_SESSION['user'] ); ?></strong></a>!</div>
+				<div class="text-white text-center mx-2"><div class="icon-holder greet-icon"><?php include $_SERVER['DOCUMENT_ROOT'] . '/data/images/icons/hello.svg'; ?></div> Welcome, <a href="/dashboard/" title="Account Dashboard"><strong class="color-my-dark-accent"><?php echo htmlspecialchars( $_SESSION['user'] ); ?></strong></a>!</div>
 			<?php endif; ?>
 			<a class="nav-link mt-2" href="/"><i class="bi bi-house-door me-2"></i>Home</a>
 			<a class="nav-link" href="/about/"><i class="bi bi-info-circle me-2"></i>About Server</a>
@@ -59,7 +59,7 @@
 		<nav class="nav flex-column flex-grow-1 mt-3">
 			<a class="btn btn-download mb-4 mx-2" href="/download/">Download</a>
 			<?php if ( isset( $_SESSION['user'] ) ) : ?>
-				<div class="text-white text-center mx-2"> <div class="icon-holder greet-icon"><?php include 'data/images/icons/hello.svg'; ?></div> Welcome, <a href="/dashboard/" title="Account Dashboard"><strong class="color-my-dark-accent"><?php echo htmlspecialchars( $_SESSION['user'] ); ?></strong></a>!</div>
+				<div class="text-white text-center mx-2"> <div class="icon-holder greet-icon"><?php include $_SERVER['DOCUMENT_ROOT'] . '/data/images/icons/hello.svg'; ?></div> Welcome, <a href="/dashboard/" title="Account Dashboard"><strong class="color-my-dark-accent"><?php echo htmlspecialchars( $_SESSION['user'] ); ?></strong></a>!</div>
 			<?php endif; ?>
 			<a class="nav-link mt-2" href="/"><i class="bi bi-house-door me-2"></i>Home</a>
 			<a class="nav-link" href="/about/"><i class="bi bi-info-circle me-2"></i>About Server</a>
